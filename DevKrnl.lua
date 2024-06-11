@@ -1,5 +1,4 @@
--- 创建UI元素
-local screenGui = Instance.new("ScreenGui")
+local screenGui = Instance.new("ScreenGui")p
 local mainFrame = Instance.new("Frame")
 local executeButton = Instance.new("TextButton")
 local deleteButton = Instance.new("TextButton")
@@ -11,21 +10,18 @@ local openButton = Instance.new("ImageButton") -- 更新为ImageButton
 local scriptCenterButton = Instance.new("TextButton") -- 新增脚本中心按钮
 local scriptCenterFrame = Instance.new("Frame") -- 新增脚本中心框架
 
--- 设置屏幕GUI
 screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
--- 主框架设置
 mainFrame.Parent = screenGui
-mainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- 黑色背景
-mainFrame.Size = UDim2.new(0, 600, 0, 400) -- 扩大后的大小
-mainFrame.Position = UDim2.new(0.5, -300, 0.5, -200) -- 居中位置
-mainFrame.Draggable = true -- 可拖动
-mainFrame.Active = true -- 激活框架以响应拖动
-mainFrame.Selectable = true -- 可选择
+mainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+mainFrame.Size = UDim2.new(0, 600, 0, 400)
+mainFrame.Position = UDim2.new(0.5, -300, 0.5, -200)
+mainFrame.Draggable = true
+mainFrame.Active = true 
+mainFrame.Selectable = true
 
--- 图标设置
 icon.Parent = mainFrame
-icon.Image = "rbxassetid://10776094945" -- 替换为您的资源ID
+icon.Image = "rbxassetid://10776094945"
 icon.Size = UDim2.new(0, 50, 0, 50)
 icon.Position = UDim2.new(0, 5, 0, 5)
 
@@ -115,9 +111,9 @@ scriptCenterButton.MouseButton1Click:Connect(toggleScriptCenter)
 -- 添加固定脚本到脚本中心
 local function addFixedScripts()
     local scripts = {
-        { Name = "Trauma Hub V4", Function = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Drop56796/Mercury/main/Mercury.lua"))() end },
-        { Name = "脚本2", Function = function() print("执行脚本2") end },
-        -- 可以继续添加更多脚本
+        { Name = "Highlight", Function = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Drop56796/Highlight/main/H.lua"))() end },
+        { Name = "Dex V3", Function = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua"))() end },
+        { Name = "Keyboard (mobile)", Function = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt"))() end },
     }
 
     for i, script in ipairs(scripts) do
